@@ -1,7 +1,11 @@
 import logging
 
-logger = "hi"
+logger = ""
 
+'''
+Base class for all FSM elements.
+Implements name and logging features that can be used on all FSM elements.
+'''
 class Base(object):
 	def __init__(self, typ, name):
 		if typ == None or typ == "":
@@ -15,10 +19,14 @@ class Base(object):
 		self.__logger = logging.getLogger(logger)
 
 	def __format(self, msg):
-		return "%s (%s): %s"%(self.__type, self.name(), msg)
+		return "%s (%s): %s"%(self.__type, self.name, msg)
 
+	# Returns the name of the FSM element.
+	@property
 	def name(self):
 		return self.__name
+
+	### ROS logging methods ###
 
 	def logdebug(self, msg, *args, **kw):
 		self.__logger.debug(self.__format(msg), *args, **kw)
@@ -36,3 +44,5 @@ class Base(object):
 		msg_fmt = self.__format(msg)
 		self.__logger.critical(msg_fmt, *args, **kw)
 		raise Exception(msg_fmt)
+
+	###  / ROS logging methods ###

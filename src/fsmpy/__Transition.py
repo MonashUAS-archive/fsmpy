@@ -1,7 +1,16 @@
 from . import Watcher, State, FSM
 from .base import Base
 
+'''
+The base Transition class.
+'''
 class Transition(Base):
+	'''
+	name:		the name of the Transition used in logging
+	fsm:		the FSM object the Transition is associated with
+	watcher:	the Watcher for this Transition
+	next_state:	the State to be transitioned too if 'watcher' triggers. May be FSM.previous_state
+	'''
 	def __init__(self, name, fsm, watcher, next_state):
 		super(Transition, self).__init__("Transition", name)
 
