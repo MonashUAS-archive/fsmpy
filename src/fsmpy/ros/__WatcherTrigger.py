@@ -9,7 +9,7 @@ WatcherTrigger can be inherited to implement behaviour where the Watcher respond
 class WatcherTrigger(Watcher):
 	'''
 	name:		  the name of the Watcher used in logging
-    service_name: the name of the service to be used
+	service_name: the name of the service to be used
 	'''
     def __init__(self, name, service_name):
         super(WatcherTrigger, self).__init__(name)

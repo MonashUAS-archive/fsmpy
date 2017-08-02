@@ -15,7 +15,10 @@ class FSM(FSMBase):
 	All other arguments are passed through to the call to rospy.init_node.
 	'''
 	def __init__(self, name, *args, **kw):
-		save_file = kw.pop('save_file')
+		if 'save_file' in kw:
+			save_file = kw.pop('save_file')
+		else:
+			save_file = None
 		rospy.init_node(*args, **kw)
 		set_logger("rosout")
 		super(FSM, self).__init__(name, save_file=save_file)
