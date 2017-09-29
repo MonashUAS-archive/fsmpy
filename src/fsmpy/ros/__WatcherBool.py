@@ -24,11 +24,11 @@ class WatcherBool(Watcher):
     ### Method Overrides ###
 
     def start(self):
-		super(WatcherTrigger, self).start()
+		super(WatcherBool, self).start()
         self.__sub = Subscriber(self.__topic, Bool, self.handler)
 
     def stop(self):
-		super(WatcherTrigger, self).stop()
+		super(WatcherBool, self).stop()
         self.__sub.unregister()
 
     ###  / Method Overrides ###
