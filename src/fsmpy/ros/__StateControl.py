@@ -24,11 +24,11 @@ class StateControl(State):
     ### Method Overrides ###
 
     def start(self):
+		super(StateControl, self).start()
         self.__pub.publish(True)
-        self.logdebug("started")
 
     def stop(self):
+		super(StateControl, self).stop()
         self.__pub.publish(False)
-        self.logdebug("stopped")
 
     ###  / Method Overrides ###

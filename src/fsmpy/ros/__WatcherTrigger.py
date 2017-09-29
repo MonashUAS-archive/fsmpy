@@ -23,12 +23,12 @@ class WatcherTrigger(Watcher):
     ### Method Overrides ###
 
 	def start(self):
+		super(WatcherTrigger, self).start()
 	    self.__service = Service(self.__service_name, Trigger, self.handler)
-	    self.logdebug("started")
 
 	def stop(self):
+		super(WatcherTrigger, self).stop()
 		self.__service.shutdown()
-		self.logdebug("stopped")
 
 	###  / Method Overrides ###
 	### Overridable methods ###
