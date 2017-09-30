@@ -1,8 +1,8 @@
 # Sets the logger for fsmpy. Must be called before instantiating any states.
 def set_logger(log):
-    import base
-    base.logger = log
-    del base
+	import base
+	base.logger = log
+	del base
 
 from .__State import State, StateAsync
 from .__FSM import FSM

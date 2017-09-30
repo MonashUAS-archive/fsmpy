@@ -15,16 +15,16 @@ class WatcherTrigger(Watcher):
 		super(WatcherTrigger, self).__init__(name)
 
 		if service_name == None or service_name == "":
-		    self.logfatal("service_name not set")
+			self.logfatal("service_name not set")
 		self.__service_name = service_name
 
 		self.__service = None
 
-    ### Method Overrides ###
+	### Method Overrides ###
 
 	def start(self):
 		super(WatcherTrigger, self).start()
-	    self.__service = Service(self.__service_name, Trigger, self.handler)
+		self.__service = Service(self.__service_name, Trigger, self.handler)
 
 	def stop(self):
 		super(WatcherTrigger, self).stop()
@@ -38,8 +38,8 @@ class WatcherTrigger(Watcher):
 	By default, the watcher is triggered and True is returned.
 	'''
 	def handler(self, req):
-	    with self.event.get_lock():
-	        self.event.value = True
-	    return TriggerResponse(True, "")
+		with self.event.get_lock():
+			self.event.value = True
+		return TriggerResponse(True, "")
 
 	### / Overridable methods ###
