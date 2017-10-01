@@ -28,14 +28,12 @@ class Watcher(Base):
 	'''
 	Code to be run when the Watcher is started.
 	Use this function for initialisation.
-	It is recommended to include 'self.logdebug("started")'.
 	'''
 	def start(self):
 		self.logdebug("started")
 
 	'''
 	Code to be run when the Watcher is stopped.
-	It is recommended to include 'self.logdebug("stopped")'.
 	'''
 	def stop(self):
 		self.logdebug("stopped")
@@ -43,7 +41,6 @@ class Watcher(Base):
 	'''
 	Code to be run when the Watcher is reset.
 	A reset occurs when the Watcher triggers and a FSM registers it.
-	It is recommended to include 'self.logdebug("reset")'.
 	'''
 	def reset(self):
 		self.logdebug("reset")

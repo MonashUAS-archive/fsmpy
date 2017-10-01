@@ -37,14 +37,12 @@ class State(Base):
 	'''
 	Code to be run when the State is started.
 	Use this function for initialisation.
-	It is recommended to include 'self.logdebug("started")'.
 	'''
 	def start(self):
 		self.logdebug("started")
 
 	'''
 	Code to be run when the State is stopped.
-	It is recommended to include 'self.logdebug("stopped")'.
 	'''
 	def stop(self):
 		self.logdebug("stopped")
